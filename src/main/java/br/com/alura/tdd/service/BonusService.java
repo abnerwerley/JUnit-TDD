@@ -1,17 +1,14 @@
 package br.com.alura.tdd.service;
 
-import java.math.BigDecimal;
-
 import br.com.alura.tdd.modelo.Funcionario;
 
 public class BonusService {
 
-	public BigDecimal calcularBonus(Funcionario funcionario) {
-		BigDecimal valor = funcionario.getSalario().multiply(new BigDecimal("0.1"));
-		if (valor.compareTo(new BigDecimal("1000")) > 0) {
-			valor = BigDecimal.ZERO;
-		}
-		return valor;
-	}
+    public double calcularBonus(Funcionario funcionario) {
+        double salario = funcionario.getSalario();
+        double valor =  (salario > 10000) ? 0 : 0.1;
+
+        return salario*valor;
+    }
 
 }
