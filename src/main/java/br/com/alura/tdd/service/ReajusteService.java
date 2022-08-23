@@ -5,8 +5,8 @@ import br.com.alura.tdd.modelo.Funcionario;
 
 public class ReajusteService {
     public void concederReajuste(Funcionario funcionario, EnumDesempenho desempenho) {
-        double reajuste = desempenho.percentualReajuste();
-        funcionario.setSalario((long) (funcionario.getSalario() * reajuste));
+        double percentual = desempenho.percentualReajuste();
+        funcionario.setSalario((long) (funcionario.getSalario() * percentual));
     }
 }
 

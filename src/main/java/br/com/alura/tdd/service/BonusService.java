@@ -6,9 +6,9 @@ public class BonusService {
 
     public double calcularBonus(Funcionario funcionario) {
         double salario = funcionario.getSalario();
-        double valor =  (salario > 10000) ? 0 : 0.1;
+        double bonus = (salario > 10000) ? 0 : 0.1;
 
-        return salario*valor;
+        return salario * bonus;
     }
 
 }
