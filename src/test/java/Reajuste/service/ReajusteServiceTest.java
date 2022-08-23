@@ -1,6 +1,6 @@
 package Reajuste.service;
 
-import br.com.alura.tdd.modelo.Desempenho;
+import br.com.alura.tdd.modelo.EnumDesempenho;
 import br.com.alura.tdd.modelo.Funcionario;
 import br.com.alura.tdd.service.ReajusteService;
 import org.junit.jupiter.api.Test;
@@ -16,7 +16,7 @@ class ReajusteServiceTest {
         ReajusteService service = new ReajusteService();
         Funcionario funcionario = new Funcionario("Aninha", LocalDate.now(), 1000L);
 
-        service.concederReajuste(funcionario, Desempenho.A_DESEJAR);
+        service.concederReajuste(funcionario, EnumDesempenho.A_DESEJAR);
 
         assertEquals(1030, funcionario.getSalario());
     }
@@ -26,7 +26,7 @@ class ReajusteServiceTest {
         ReajusteService service = new ReajusteService();
         Funcionario funcionario = new Funcionario("Joana", LocalDate.now(), 1000L);
 
-        service.concederReajuste(funcionario, Desempenho.BOM);
+        service.concederReajuste(funcionario, EnumDesempenho.BOM);
 
         assertEquals(1150, funcionario.getSalario());
     }
@@ -36,7 +36,7 @@ class ReajusteServiceTest {
         ReajusteService service = new ReajusteService();
         Funcionario funcionario = new Funcionario("Joana", LocalDate.now(), 1000L);
 
-        service.concederReajuste(funcionario, Desempenho.OTIMO);
+        service.concederReajuste(funcionario, EnumDesempenho.OTIMO);
 
         assertEquals(1200, funcionario.getSalario());
     }
@@ -46,7 +46,7 @@ class ReajusteServiceTest {
         ReajusteService service = new ReajusteService();
         Funcionario funcionario = new Funcionario("Arthur", LocalDate.now(), 2000L);
 
-        service.concederReajuste(funcionario, Desempenho.BOM);
+        service.concederReajuste(funcionario, EnumDesempenho.BOM);
 
         assertEquals(2300, funcionario.getSalario());
     }

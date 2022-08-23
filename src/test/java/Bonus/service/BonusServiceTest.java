@@ -14,7 +14,7 @@ class BonusServiceTest {
     @Test
     void bonusDeveriaSer0ParaFuncionarioComSalarioMuitoAlto() {
         BonusService service = new BonusService();
-        double bonus = service.calcularBonus(new Funcionario("Gabriel", LocalDate.now(), (long) 25000.0));
+        double bonus = service.calcularBonus(new Funcionario("Gabriel", LocalDate.now(), 25000L));
 
         assertEquals(0.0, bonus);
     }
