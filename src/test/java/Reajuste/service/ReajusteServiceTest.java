@@ -10,6 +10,7 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class ReajusteServiceTest {
 
@@ -51,6 +52,12 @@ class ReajusteServiceTest {
         assertEquals(new BigDecimal("2300.00"), reajuste);
     }
 
+    @Test
+    void concederReajusteSemSalarioException(){
+        assertThrows(IllegalArgumentException.class, () ->
+                service.concederReajuste(getFuncionarioSemSalario(),  EnumDesempenho.A_DESEJAR));
+    }
+
     private Funcionario getFuncionario() {
         return Funcionario.builder()
                 .nome(NOME)
@@ -67,6 +74,12 @@ class ReajusteServiceTest {
                 .build();
     }
 
+    private Funcionario getFuncionarioSemSalario() {
+        return Funcionario.builder()
+                .nome(NOME)
+                .dataAdmissao(DATA)
+                .build();
+    }
 
 
 }
