@@ -30,7 +30,7 @@ class BonusServiceTest {
 
 
     @Test
-    void bonusDeveriaSer0ParaFuncionarioComSalarioMuitoAlto() {
+    void calcularBonusException() {
         assertThrows(IllegalArgumentException.class, () ->
                 service.calcularBonus(getFuncionarioSalarioAlto())
         );
