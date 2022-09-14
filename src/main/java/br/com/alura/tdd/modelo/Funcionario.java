@@ -1,20 +1,19 @@
 package br.com.alura.tdd.modelo;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class Funcionario {
 
     private String nome;
     private LocalDate dataAdmissao;
-    private Long salario;
+    private BigDecimal salario;
 
 }
